@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.bitcode.repository.mapper.UserInfoMapper">
+	<resultMap id="qnaMap" type="qna">
+		<result column="no" property="no" />
+		<result column="group_no" property="groupNo" />
+		<result column="group_order" property="groupOrder" />
+		<result column="depth" property="depth" />
+		<result column="id" property="id" />
+		<result column="language_code" property="code" />
+		<result column="language_name" property="codeName" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+		<result column="view_cnt" property="viewCnt" />
+		<result column="like_cnt" property="likeCnt" />
+		<result column="answer_at" property="answerAt" />
+		<result column="stsfc_code" property="stsfcCode" />
+	</resultMap>
+	<resultMap id="stsfcCodeMap" type="stsfcCode">
+		<result column="stsfc_code" property="stsfcCode" />
+		<result column="stsfc_step" property="stsfcStep" />
+	</resultMap>
+<!-- 	만족체크 -->
+	<select id="checkSatis" parameterType="qna" resultMap="qnaMap">
+		select *
+		from tb_qna_board 
+			where group_no = #{groupNo} and
+			    depth = 0
+	</select>	
+	<select id="checkSatisAdmin" parameterType="qna" resultMap="qnaMap">
+		select *
+		from tb_qna_board 
+		  where group_no = #{groupNo} and
+			  group_order = #{groupOrder}
+	</select>
+	<update id="updateSatisfAnat" parameterType="qna">
+        update tb_qna_board
+           set stsfc_code = #{stsfcCode}
+			 where no = #{no} and
+			  group_no = #{groupNo} and
+			  depth = 1	
+	</update>
+	<resultMap id="attendMap" type="attendance">
+		<result column="id" property="id" />
+		<result column="att_id" property="attID" />
+		<result column="att_date" property="attDate" />
+	</resultMap>
+	
+<!-- 	만족도 List 출력 -->
+	<select id="selectIdAnswer"  parameterType="string" resultMap="qnaMap">
+		select *
+		  from tb_qna_board 
+		 where id = #{id}
+		 
+	</select>
+	<select id="selectSatisAdmin" resultMap="qnaMap">
+		select *
+		from tb_qna_board q
+		inner 
+		join tb_user u
+		on q.id = u.id
+		where u.auth = 'S' 
+			  
+
+		 
+	</select>	
+<!-- 	출석체크 -->
+	<insert id="insertAttendance" parameterType="attendance">
+	insert into tb_attendance(
+		id,
+		att_date
+	) values (
+		#{id},
+		#{attDate}
+		)
+	</insert>
+	<select id="selectAttendance" resultMap="attendMap" parameterType="string">
+		select *
+		  from tb_attendance
+		 where id = #{id} 
+	</select>
+	<select id="selectAttenByIdDate" resultMap="attendMap" parameterType="attendance">
+		select *
+		  from tb_attendance
+		 where id = #{id} and
+		 	   date_format(att_date, '%e%c%Y') = date_format(now(), '%e%c%Y')
+	</select>
+	
+<!--     <resultMap id="userMap" type="user"> -->
+<!--     	<result column = "id" property = "id" /> -->
+<!--         <result column = "name" property = "name" /> -->
+<!--         <result column = "nick_name" property = "nickName" /> -->
+<!--         <result column = "password" property = "password" /> -->
+<!--         <result column = "birthday" property = "birthday" /> -->
+<!--         <result column = "email" property = "email" /> -->
+<!--         <result column = "point" property = "point" /> -->
+<!--         <result column = "auth" property = "auth" /> -->
+<!--     </resultMap>	 -->
+    <update id="updateUserPoint" parameterType="String">
+        update tb_user
+           set point = point + 10
+         where id = #{id}  
+    </update> 	
+</mapper>

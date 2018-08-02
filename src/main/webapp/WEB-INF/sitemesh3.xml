@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+	<mapping path="/*" decorator="/WEB-INF/jsp/template/decorator.jsp" />
+	<mapping path="/test/*" exclue="true"/>
+	<mapping path="/music/*" exclue="true"/>
+	<mapping path="/user/pattern.do" exclue="true"/>
+<!-- 	<mapping path="/config/*" exclue="true"/> -->
+</sitemesh>

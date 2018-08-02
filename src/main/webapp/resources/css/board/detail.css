@@ -1,0 +1,740 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	font-family:NanumBarunGothic,sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 13px;
+	/* font: inherit; */
+	vertical-align: baseline;
+	color:#5a5a5a;
+}
+
+/* 만족버튼 */
+.satisAn {
+/* 	margin-bottom: -10px; */
+}
+.satisGood { width: 15px; height: 24px;}
+input[type="radio"] {
+	cursor:pointer
+}
+
+input[type="radio"] + label {
+    color:#400000;
+    font-family:Arial, sans-serif;
+    cursor:pointer
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+#statisBtn {
+	text-align: center;
+    width: 40px;
+    display: block;
+    height: 25px;
+    border-radius: 2px;
+    /* margin-left: 1px; */
+    /* background: #4d92b5; */
+    color: #3a3838;
+    ext-decoration: none;
+    margin-top: -16px;
+    text-decoration: none;
+    display: inline-block;
+    /* padding: 2px 8px; */
+}
+.satisDiv {    margin-top: 10px;
+    margin-bottom: 10px;}
+
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	/* line-height: 1; */
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {text-decoration: none;}
+textarea {    
+	padding-left:7px;
+	width: 610px;
+    border:1px solid #dcdcdc;
+    height: 74px;}
+/* 상세페이지 */
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.container .shell-container {
+  margin: auto;
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  /* width: 900px; */
+  height: 500px;
+   display: flex;
+  flex-direction: column;
+}
+.contents_header {
+	position: relative;
+	padding: 20px;
+	background-color: #f3f3f3;
+	border: 1px solid #e6e6e6;
+	border-top: 1px solid #b3b3b3;
+	width: 100%;
+	margin: auto;
+	height: 85px;
+}
+
+.contents_header>.titleWrap {
+	color: #1a1a1a;
+	font-size: 17px;
+	font-weight: 600;
+	word-wrap: break-word;
+}
+.contents_header>.titleWrap > .title{
+    text-align: left;	
+}
+/* .qnaTitle {color: #5a5a5a;} */
+
+.contents_body {
+	font-family: Arial, Verdana, "Trebuchet MS", sans-serif;
+	font-size: 12px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	border-top: none;
+	padding: 20px;
+	font-size: 13px;
+	line-height: 1.6;
+	width:100%;
+	/* height: 500px; */
+	height: 320px;
+	overflow-y: scroll;
+	margin: auto;
+}
+.contents {width:100%; height:auto; min-height:350px;text-align:left;}
+.contents_btn {margin-top: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 22px;}
+.detail {
+	min-height: 240px;
+}
+
+.nowrap {
+	font-weight: normal;
+	padding-left: 6px;
+	font-weight: normal;
+	color: #666666;
+}
+
+.cf {
+	padding-left: 5px;
+	/* line-height: 1.5; */
+	color: #666666;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+.day {
+	position: absolute;
+    top: 21px;
+	padding-left: 5px;
+	line-height: 1.5;
+	position: absolute;
+	color: #666666;
+	font-size: 15px;
+	right: 20px;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+.shell_writer {
+	float: left;
+	margin-right: 20px;
+	margin-top: 10px;
+	color:#5a5a5a;
+}
+
+.shell_hits {
+	float: right;
+	color: #666666;
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+.shell_hits>span {
+	padding-left: 5px;
+	color:#5a5a5a;
+}
+
+.reHeader {
+/* 	background: #f3f3f3;*/
+background:#fff;
+ }
+
+.reBody, .writeComment {
+	background: #f5f5f5;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.reWriter {
+	display: inline-block;
+/* 	margin: 5px 0 0 6px; */
+    float: left;
+    font-size:15px;
+	vertical-align: top;
+	color: #012b53;
+	word-wrap: break-word;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.reDay {
+    font-size: 12px;
+    font-family: '돋움', dotum, Helvetica, sans-serif;
+    margin: 3px 10px 1px;
+    display: inline-block;
+    float: left;
+}
+
+.recomment {
+	padding-left: 10px;
+	background: url(../../images/arrow.png) no-repeat 0 0;
+	background-size: 21px;
+}
+
+.recomment>a {
+	padding-left: 12px;
+	font-size: 12px;
+	display: inline-block;
+	color: #484646;
+	margin-top: 0px;
+}
+
+.reBody li {
+	position: relative;
+/* 	border-top: 1px solid #dadada;*/
+	margin-top: 10px; 
+	backgrond:#fff;
+	padding-top: 10px;
+}
+
+.reBody li.reWrite {
+	padding-left: 11px;
+}
+
+.reBody li.reWrite .reWriteDiv {
+	width: 87%;
+	clear: both;
+	padding: 10px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: repeat;
+	border-color: #e5e5e5;
+}
+
+.reBody li.reWrite textarea {
+	overflow: hidden;
+	line-height: 14px;
+	height: 39px;
+	border: 0 !important;
+	width: 100%;
+	margin: 0;
+	padding: 1px 0;
+	overflow: auto;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	resize: none;
+}
+
+.reple {
+	background: url(../../images/arrow3.png) no-repeat 5px 11px;
+	background-size: 15px;
+	padding-left: 20px;
+}
+
+.reple>.comment>.reBtn {
+	position: absolute;
+	right: 16px;
+	width: 10%;
+	top: 5px;
+	cursor: pointer;
+}
+
+.reple>.comment>.reBtn .resubmit {
+	width: 100%;
+	height: 55px;
+	color: #666;
+}
+
+.repleW {
+	background: url(../../images/arrow3.png) no-repeat 5px 11px;
+	background-size: 15px;
+	padding-left: 20px;
+}
+
+}
+.repleW .comment .reWriteDiv {
+	width: 87%;
+	clear: both;
+	padding: 10px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: repeat;
+	border-color: #e5e5e5;
+}
+
+.repleW .comment .reWriteDiv table {
+	width: 100%;
+}
+
+.repleW>.comment>.reWriteDiv textarea {
+	overflow: hidden;
+	line-height: 14px;
+	height: 39px;
+	border: 0 !important;
+	width: 100%;
+	margin: 0;
+	padding: 1px 0;
+	overflow: auto;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	resize: none;
+}
+
+.repleW>.comment>.reBtn {
+	top: 15px;
+}
+
+.comment {
+	clear: both;
+	margin: 5px;
+	padding-top:5px;
+	min-height: 60px;
+	text-align: left;
+}
+
+.reBody > .reBtn, .writeForm > .reBtn {
+	position: absolute;
+	right: 16px;
+	width: 10%;
+	top: 10px;
+	cursor: pointer;
+}
+.resubmit {
+	width: 100%;
+	height: 66px;
+	color: #666;
+}
+
+.reWrite table {
+	width: 100%;
+}
+
+Button {
+	cursor: pointer;
+}
+
+/* 등록폼 */
+table.editTable {
+	width:100%; 
+	height:80%;
+    border: none;
+    border-collapse: collapse;
+    border-top: 1px solid #b3b3b3;
+    border-bottom:1px solid #dadada;
+}
+
+}
+table.editTable tr { height:30px;}
+table.editTable tr th {  
+	width: 20%;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f3f3f3;
+    border-top: 1px solid #e6e6e6;
+    color: #727272;
+    /* text-align: right; */
+    text-align:center;
+    font-size: 14px;}
+table.editTable tr td {    
+	background:#fff;
+	padding: 10px 20px;
+    border: none;
+    border-top: 1px solid #e6e6e6;
+    font-size: 14px;}
+    .shell_title {    
+    background:#fff;
+    color: #5a5a5a;
+    text-align: center;
+    font-weight: 700;
+    font-size: 27px;
+    margin-bottom: 0;
+    padding: 12px; margin:0;}
+.editTitle {
+	width: 80%;
+    border: 1px solid #c5c5c5;
+    height: 33px;
+    padding-left: 5px;
+}
+.editSelect {    
+	border:1px solid #c5c5c5;
+	width: 100px;
+    margin-left: 10px;
+    height: 33px;
+}
+.editWriter {    
+	text-align: left;
+    font-size: 13px !important;
+    font-weight: 700;
+    color:#464646;
+    }
+.editWriter > input { border:none;}
+.editBtn {
+	width: 50px;
+    background: #fff;
+    color: #505354;
+    height: 31px;
+    border: 1px solid #c5c5c5;	
+}
+.editSubmit{
+	height: 29px;
+    background: #244c61;
+    width: 50px;
+    color: white;
+    border: none;
+	
+}
+
+/* 카드 스타일 */
+.detailBody {
+    width: 950px;
+    margin: 0 auto;
+    margin-top:12%;
+    /* margin-left: 10%; */
+    margin-bottom: 50px;
+}
+/* .qna {
+  width: 100%;
+  margin: 0 auto;
+} */
+.boardList {
+  width: 100%;
+  text-align: center;
+}
+.pull-right {
+	margin-right: 50px;
+	margin-bottom: 20px;
+}
+th, td, a {
+  transition: color 333ms ease-in-out;
+  vertical-align: middle;
+  text-align: center;
+}
+a {
+  color: #407DB8;
+  text-decoration: none;
+  font-weight: 400;
+}
+/* tr:nth-child(even) {
+  background: #e6f0f6;
+}
+tr:nth-child(odd) {
+  background: #fff;
+}
+tr:hover {
+  background: #ddd;
+}
+tr:hover:nth-child(even) {
+  background: #ddd;
+}
+tr:hover td {
+  color: #888;
+}
+tr:hover a {
+  color: #666;
+} */
+tr td {
+  color: #888;
+  font-size: 0.78em;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+/* 글씨 h1, h3 */
+div .information {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	color: #408080;
+	text-align: center;
+	font-size: 23px;
+}
+
+.title1 {
+	color: #ffffff;
+	backgound: inherit;
+	/*   margin: 0 0 10px 6px; */
+	padding: 0;
+	font-size: 50px;
+	margin-top: 4%;
+	margin-left: 37%;
+	margin-bottom: 2%;
+}
+
+/* col 비율 */
+.one { width: 6.866%; }
+.two { width: 15.33%; }
+.three { width: 23.8%; }
+.four { width: 32.26%; }
+.five { width: 40.73%; }
+.six { width: 49.2%; }
+.seven { width: 57.66%; }
+.eight { width: 66.13%; }
+.nine { width: 74.6%; }
+.ten { width: 83.06%; }
+.eleven { width: 91.53%; }
+.twelve { width: 100%; }
+.four1 { width: 6% }
+.five1 { width: 10% }
+.ten1 { width: 30% }
+
+/* COLUMNS */
+.col {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+}
+.col:first-of-type {
+	margin-left: 0;
+}
+/* PROFILES */
+.card {
+	max-width: 100%;
+	height: 100%;
+	background-color: #f7f7f7;
+	font-family: 'Arimo', sans-serif;
+	font-size: 14px;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	box-sizing: border-box;
+}
+
+/* CARD ! */
+#card1 {
+	margin: 0 auto;
+	max-width: 100%;
+	width:950px;
+	text-align: center;
+	color: #2c3e50;
+	/* 	padding: 15px; */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	border-radius: 6px;
+	margin-bottom: 50px;
+}
+
+/* CARD 2 */
+#card2 {
+	max-width: 30%;
+	overflow: hidden;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+/* CARD 3 */
+#card3 {
+	max-width: 30%;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th {
+	padding: 8px;
+	line-height: 1.42;
+	vertical-align: middle;
+	border-top: 1px solid #ddd;
+	text-align: center;
+}
+/* 홀수번째 tr들만을 대상으로 */
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+}
+.table-bordered {
+	border: 1px solid #ddd;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th {
+	border: 1px solid #ddd;
+	text-align: center;
+}
+
+.table-hover>tbody>tr:hover {
+	background-color: #f5f5f5;
+}
+
+.reWriteDiv > table tr td {
+    letter-spacing: 0;
+    color: #505354;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* 빨 주 노 초 파 람 보 윗줄단  */
+.swatches {
+	float: left;
+	background: #333;
+}
+.swatches span {
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+.red {
+	background: #ad3025;
+	opacity: 0.9;
+}
+.orange {
+	background: #f27937;
+	opacity: 0.8;
+}
+.yellow {
+	background: #f0b500;
+	opacity: 0.8;
+}
+.green {
+	background: #22a86d;
+	opacity: 0.8;
+}
+.blue {
+	background: #2279a4;
+	opacity: 0.8;
+}
+
+.maxbtn span {
+	display: block;
+	border: 1px solid #333;
+	border-top: 3px solid #333;
+	width: 11px;
+	height: 11px;
+	margin-top: 7px;
+}
+
+.maxbtn:hover span, .maximized .maxbtn span {
+	border-color: #e7e7e7;
+}
+
+.xbtn:hover {
+	color: #e7e7e7;
+}
+
+.topbar {
+	border-radius: 3px 3px 0 0;
+	padding: 5px;
+	text-align: right;
+	cursor: default;
+}
+
+/* span {
+	color: #e7e7e7;
+} */
+
+.xbtn, .maxbtn {
+	cursor:pointer;
+	padding: 2px 4px;
+	text-align: center;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	zoom: 1.0;
+	vertical-align: top;
+	font-family: 'Days One', sans-serif;
+	font-size: 16px;
+	margin-top: -3px;
+}
+
+.imgLink {
+	    max-width: 600px;
+    max-height: 400px;
+}
+    
+/* 댓글 */
+.coWrap { float:right;}
+.coBtn { margin-right:5px;
+    color: #5a5a5a;}
+
+.like {border: 1px solid #c5c3c3;
+    width: 101px;
+    position: relative;
+    margin: 5px auto;
+    padding: 3px;}
+.LikeGood {
+	background: url(../../images/li.png) no-repeat 7% 23%;
+    background-size: 23%;
+    display: inline-block;
+    width: 82px;
+    display: inline-block;
+    /* height: 55px; */
+}
+.like_count {
+	display: inline-block;
+    width: 10px;
+    right: 21px;
+    height: 23px;
+    position: absolute;
+    top: 5px;
+	
+}
+

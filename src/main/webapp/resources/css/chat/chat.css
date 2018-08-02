@@ -1,0 +1,288 @@
+.chatBody {
+	width: 996px;
+	margin: 0 auto;
+	margin-top:12%;
+	/* margin-left: 10%; */
+}
+.chat {
+  width: 100%;
+  margin: 0 auto;
+}
+.chatList {
+  width: 100%;
+  text-align: center;
+}
+.pull-right {
+	margin-right: 50px;
+	margin-bottom: 20px;
+}
+th, td, a {
+  transition: color 333ms ease-in-out;
+  vertical-align: middle;
+  text-align: center;
+}
+a {
+  color: #407DB8;
+  text-decoration: none;
+  font-weight: 400;
+}
+tr:nth-child(even) {
+  background: #e6f0f6;
+}
+tr:nth-child(odd) {
+  background: #fff;
+}
+tr:hover {
+  background: #ddd;
+}
+tr:hover:nth-child(even) {
+  background: #ddd;
+}
+tr:hover td {
+  color: #888;
+}
+tr:hover a {
+  color: #666;
+}
+tr td {
+  color: #888;
+  font-size: 0.78em;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+}
+
+/* 글씨 h1, h3 */
+div .information {
+/* 	margin-top: 20px;
+	margin-bottom: 50px;
+	 color: #408080;
+	color: #424242;
+	text-align: center;
+	font-size: 23px;
+    font-weight: 700;
+    font-size: 30px; */
+    margin-top: 20px;
+    color: #5a5a5a;
+    text-align: center;
+    /* font-size: 23px; */
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.title1 {
+	color: #ffffff;
+	backgound: inherit;
+	/*   margin: 0 0 10px 6px; */
+	padding: 0;
+	font-size: 50px;
+	margin-top: 4%;
+	margin-left: 37%;
+	margin-bottom: 2%;
+}
+
+/* col 비율 */
+.one { width: 6.866%; }
+.two { width: 15.33%; }
+.three { width: 23.8%; }
+.four { width: 32.26%; }
+.five { width: 40.73%; }
+.six { width: 49.2%; }
+.seven { width: 57.66%; }
+.eight { width: 66.13%; }
+.nine { width: 74.6%; }
+.ten { width: 83.06%; }
+.eleven { width: 91.53%; }
+.twelve { width: 100%; }
+.four1 { width: 6% }
+.five1 { width: 10% }
+.ten1 { width: 30% }
+
+/* COLUMNS */
+.col {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+}
+.col:first-of-type {
+	margin-left: 0;
+}
+/* PROFILES */
+.card {
+	max-width: 100%;
+	height: 100%;
+	background-color: #f7f7f7;
+	font-family: 'Arimo', sans-serif;
+	font-size: 14px;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	box-sizing: border-box;
+}
+
+/* CARD ! */
+#card1 {
+	margin: 0 auto;
+	max-width: 100%;
+	width:996px;
+	text-align: center;
+	color: #2c3e50;
+	/* 	padding: 15px; */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	border-radius: 6px;
+}
+
+/* CARD 2 */
+#card2 {
+	max-width: 30%;
+	overflow: hidden;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+/* CARD 3 */
+#card3 {
+	max-width: 30%;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th {
+	padding: 8px;
+	line-height: 1.42;
+	vertical-align: middle;
+	border-top: 1px solid #ddd;
+	text-align: center;
+}
+/* 홀수번째 tr들만을 대상으로 */
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+}
+.table-bordered {
+	border: 1px solid #ddd;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th {
+	border: 1px solid #ddd;
+	text-align: center;
+}
+
+.table-hover>tbody>tr:hover {
+	background-color: #f5f5f5;
+}
+
+/* 빨 주 노 초 파 람 보 윗줄단  */
+.swatches {
+	float: left;
+	background: #333;
+}
+.swatches span {
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+.red {
+	background: #ad3025;
+	opacity: 0.9;
+}
+.orange {
+	background: #f27937;
+	opacity: 0.8;
+}
+.yellow {
+	background: #f0b500;
+	opacity: 0.8;
+}
+.green {
+	background: #22a86d;
+	opacity: 0.8;
+}
+.blue {
+	background: #2279a4;
+	opacity: 0.8;
+}
+
+.maxbtn span {
+	display: block;
+	border: 1px solid #333;
+	border-top: 3px solid #333;
+	width: 11px;
+	height: 11px;
+	margin-top: 7px;
+}
+
+.maxbtn:hover span, .maximized .maxbtn span {
+	border-color: #e7e7e7;
+}
+
+.xbtn:hover {
+	color: #e7e7e7;
+}
+
+.topbar {
+	border-radius: 3px 3px 0 0;
+	padding: 5px;
+	text-align: right;
+	cursor: default;
+}
+
+.xbtn, .maxbtn {
+	padding: 2px 4px;
+	text-align: center;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	zoom: 1.0;
+	vertical-align: top;
+	font-family: 'Days One', sans-serif;
+	font-size: 16px;
+	margin-top: -3px;
+}
+
+
+/* 채팅박스 */
+p {
+  margin: 0 0 0.5em;
+  margin-top: 10px;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #e5e5ea;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+p.them {
+  float: left;
+  background: #333;
+  color: #fff;
+  margin-left: 10px;
+}
+p.them::after {
+  position: absolute;
+  left: -0.5em;
+  bottom: 0;
+  width: 0.5em;
+  height: 1em;
+  border-right: 0.5em solid #e5e5ea;
+  border-bottom-right-radius: 1em 0.5em;
+}
+p.me {
+  float: right;
+  background-color: #1289fe;
+  color: white;
+  margin-right: 10px;
+}
+p.me::after {
+  position: absolute;
+  right: -0.5em;
+  bottom: 0;
+  width: 0.5em;
+  height: 1em;
+  border-left: 0.5em solid #1289fe;
+  border-bottom-left-radius: 1em 0.5em;
+}
+
+

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.bitcode.repository.mapper.QnaMapper">
+	<resultMap id="qnaMap" type="qna">
+		<result column="no" property="no" />
+		<result column="group_no" property="groupNo" />
+		<result column="group_order" property="groupOrder" />
+		<result column="depth" property="depth" />
+		<result column="id" property="id" />
+		<result column="nick_name" property="nickName" />		
+		<result column="language_code" property="code" />
+		<result column="language_name" property="codeName" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+		<result column="view_cnt" property="viewCnt" />
+		<result column="like_cnt" property="likeCnt" />
+		<result column="answer_at" property="answerAt"/>
+		<result column="read_ans" property="readAns"/>
+	</resultMap>
+	
+	<!-- 리스트 및 검색 쿼리  -->
+	<select id="selectBoardSearch" parameterType="search" resultMap="qnaMap">
+		SELECT SQL_CALC_FOUND_ROWS A.*
+		FROM (
+		select
+		q.no,u.name,u.nick_name,q.title,q.content,q.depth,q.group_no,q.group_order,q.id,q.language_code,q.like_cnt,q.reg_date,q.stsfc_code,q.view_cnt,l.language_name
+		from tb_qna_board q
+		inner
+		join tb_language_code l
+		on q.language_code =
+		l.language_code
+        inner 
+        join tb_user u
+        on q.id = u.id
+		<where>
+			<choose>
+				<when test="type.equals('title')">
+					AND q.title like concat('%',#{keyword},'%')
+				</when>
+				<when test="type.equals('content')">
+					AND q.content like concat('%',#{keyword},'%')
+				</when>
+				<when test="type.equals('writer')">
+					AND u.nick_name like concat('%',#{keyword},'%')
+				</when>
+				<when test="type.equals('code')">
+					ANd l.language_name like concat('%',#{keyword},'%')
+				</when>
+			</choose>
+		</where>
+	order by
+			<choose>
+			 <when test="sort == 1 ">
+				q.reg_date desc, q.group_no desc, q.group_order asc 	
+			 </when>
+			 <when test="sort == 2">
+			 	q.like_cnt desc, q.group_no desc, q.group_order asc 
+			 </when>
+			 <when test="sort == 3">
+			 	q.view_cnt desc, q.group_no desc, q.group_order asc		 
+			 </when>
+			 <when test="sort == 0 ">
+			   q.group_no desc, q.group_order asc 	 
+			   </when>
+			</choose>
+	<!-- 	order
+		by q.group_no desc, q.group_order asc  -->) A
+		LIMIT #{begin},5
+	</select>
+	
+	<!-- 게시글 및 검색 카운트 -->
+	<select id="searchBoardCount" parameterType="search" resultType="int">
+		SELECT
+		SQL_CALC_FOUND_ROWS count(*)
+		FROM (
+		select
+		q.no,u.name,u.nick_name,q.title,q.content,q.depth,q.group_no,q.group_order,q.id,q.language_code,q.like_cnt,q.reg_date,q.stsfc_code,q.view_cnt,l.language_name
+		from tb_qna_board q
+		inner
+		join tb_language_code l
+		on q.language_code =
+		l.language_code
+		inner
+		join tb_user u
+		on q.id = u.id
+		<where>
+			<choose>
+				<when test="type.equals('title')">
+					AND q.title like concat('%',#{keyword},'%')
+				</when>
+				<when test="type.equals('content')">
+					AND q.content like concat('%',#{keyword},'%')
+				</when>
+				<when test="type.equals('writer')">
+					AND u.nick_name like concat('%',#{keyword},'%')
+				</when>
+				<when test="type.equals('code')">
+					ANd l.language_name like concat('%',#{keyword},'%')
+				</when>
+			</choose>
+		</where>
+	order by
+			<choose>
+			 <when test="sort == 1">
+				q.reg_date desc, q.group_no desc, q.group_order asc 	
+			 </when>
+			 <when test="sort == 2">
+			 	q.like_cnt desc, q.group_no desc, q.group_order asc 
+			 </when>
+			 <when test="sort == 3">
+			 	q.view_cnt desc, q.group_no desc, q.group_order asc		 
+			 </when>
+			 <when test="sort == 0">
+			   q.group_no desc, q.group_order asc 	 
+			   </when>
+			</choose>
+	<!-- 	order
+		by q.group_no desc, q.group_order asc  -->) A
+	</select>
+	<select id="selectBoardByNo" parameterType="int" resultMap="qnaMap">
+		select *
+		from tb_qna_board q
+		inner
+		join tb_language_code c
+		on
+		q.language_code = c.language_code
+		inner 
+		join tb_user u
+		on q.id = u.id
+		where q.no = #{no}
+	</select>
+
+	<delete id="deleteBoard" parameterType="int">
+		delete
+		from tb_qna_board
+		where no=#{no}
+	</delete>
+
+	<resultMap id="fileMap" type="qnaFile">
+		<result column="no" property="no" />
+		<result column="file_no" property="fileNo" />
+		<result column="file_path" property="filePath" />
+		<result column="ori_name" property="oriName" />
+		<result column="system_name" property="systemName" />
+		<result column="file_size" property="fileSize" />
+	</resultMap>
+
+	<select id="selectQnaFile" parameterType="int" resultMap="fileMap">
+		select
+		*
+		from tb_qna_file
+		where no=#{no}
+	</select>
+
+	<insert id="insertBoard" parameterType="qna">
+		<selectKey keyProperty="no" resultType="int" order="AFTER">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+		<!-- insert into tb_qna_board(group_no,id,language_code,title,content) 
+			values((select LAST_INSERT_ID() +0 limit 1),#{id},#{code},#{title},#{content}) -->
+		insert into
+		tb_qna_board(group_no,id,language_code,title,content)
+		values(#{no},#{id},#{code},#{title},#{content})
+	</insert>
+   
+   <!--  글 작성시 포인트 추가  -->
+	<update id="updatePoint" parameterType="user">
+		update tb_user
+		set point = point + 10
+		where id = #{id}
+	</update>
+	
+	<!-- qna글 작성시 포인트 차감 -->
+	<update id="deletePoint" parameterType="user">
+	   update tb_user
+	     set point = point - 10 
+	    where id = #{id}
+	</update>
+	
+	<update id="updateGroupNo" parameterType="int">
+		update tb_qna_board
+		set
+		group_no =#{no}
+		where no=#{no}
+	</update>
+	<update id="updateBoard" parameterType="qna">
+		update tb_qna_board
+		set
+		title=#{title},
+		content=#{content}
+		where no=#{no}
+	</update>
+
+	<update id="updateViewCnt" parameterType="int">
+		update tb_qna_board
+		set view_cnt = view_cnt + 1
+		where no = #{no}
+	</update>
+	
+	<update id="updateLikeCnt" parameterType="int">
+		update tb_qna_board
+		 set like_cnt = like_cnt + 1
+	     where no = #{no}
+	</update>
+
+	<!-- 파일 등록,수정 -->
+	<insert id="insertQnaFile" parameterType="qnaFile">
+		insert into
+		tb_qna_file(no,file_path,ori_name,system_name,file_size)
+		values(#{no},#{filePath},#{oriName},#{systemName},#{fileSize})
+	</insert>
+
+	<update id="updateQnaFile" parameterType="qnaFile">
+		update tb_qna_file
+		set
+		file_path=#{filePath},
+		ori_name=#{oriName},
+		system_name=#{systemName},
+		file_size=#{fileSize}
+		where no=#{no}
+	</update>
+
+	<delete id="deleteQnaFile" parameterType="int">
+		delete
+		from tb_qna_file
+		where no = #{no}
+	</delete>
+
+	<!-- 답글쿼리 -->
+
+	<update id="updateReBoard" parameterType="qna">
+		update tb_qna_board
+		set
+		group_order = group_order +1
+		where group_no = #{groupNo}
+		and group_order
+		&gt; #{groupOrder}
+	</update>
+
+	<insert id="insertReBoard" parameterType="qna">
+		INSERT INTO
+		tb_qna_board
+		(group_no,group_order,depth,title,content,id,language_code)
+		VALUES
+		(#{groupNo}, #{groupOrder} +1, #{depth}
+		+1,#{title},#{content},#{id},#{code});
+	</insert>
+
+	<!-- 답변 여부 -->
+
+	<update id="updateAnswerChange" parameterType="int">
+		update
+		tb_qna_board
+		set answer_at = 'Y'
+		where no = #{no}
+	</update>
+
+	<resultMap id="commentMap" type="qnaComment">
+		<result column="no" property="no" />
+		<result column="id" property="id" />
+		<result column="content" property="content" />
+		<result column="comment_no" property="commentNo" />
+		<result column="reg_date" property="regDate" />
+		<result column="group_no" property="groupNo" />
+		<result column="group_order" property="groupOrder" />
+		<result column="depth" property="depth" />
+		<result column="nick_name" property="nickName" />
+	</resultMap>
+	<!-- 댓글쿼리 -->
+	<select id="selectComment" parameterType="int" resultMap="commentMap">
+		select *
+		from tb_qna_comment c
+		inner
+		join tb_user u
+		 on c.id = u.id
+		where no = #{no}
+		order by comment_no asc
+	</select>
+
+	<update id="updateComment" parameterType="qnaComment">
+		update tb_qna_comment
+		set content = #{content}
+		where comment_no = #{commentNo}
+	</update>
+
+	<insert id="insertComment" parameterType="qnaComment">
+		insert into
+		tb_qna_comment
+		(no,id,content,group_no)
+		values(
+		#{no},#{id},#{content},#{groupNo})
+	</insert>
+
+	<delete id="deleteComment" parameterType="int">
+		delete
+		from
+		tb_qna_comment
+		where comment_no = #{commentNo}
+	</delete>
+
+	<!-- 알림 -->
+	<!-- 사용자 아이디가 접속하면 게시글을 쓴 경우 정보를 가져오게 -->
+	<select id="selectNotification" parameterType="string" resultMap="qnaMap">
+	 select *
+	   from tb_qna_board
+	  where id=#{id}
+	</select>
+	
+		<resultMap id="userMap" type="user">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="nick_Name" property="nickName" />
+		<result column="password" property="password" />
+		<result column="email" property="email" />
+		<result column="birthday" property="birthday" />
+		<result column="point" property="point" />
+		<result column="auth" property="auth" />
+	</resultMap>
+	
+	<!-- user point를 알고 싶을 때  -->
+	<select id="selectUserPoint" parameterType="string" resultMap="userMap">
+	select *
+	 from tb_user
+	 where id = #{id}
+	</select>
+	
+	
+<!-- 	<select id="selectNtf" parameterType="int" resultMap="qnaMap">
+	    select *
+		from tb_qna_board
+		where group_no = #{group_no}
+		and depth = 1
+		
+		
+		select *
+		from tb_qna_board
+		where id = #{id}
+		and depth = 0
+		and answer_at = 'Y'
+	</select> -->
+
+	<select id="selectNoRead" parameterType="qna" resultMap="qnaMap">
+		select *
+		from tb_qna_board q
+		inner 
+		 join tb_user u
+	     on q.id = u.id
+	  where q.depth = 1
+		and q.group_no = #{groupNo}
+		and q.read_ans = 'N'
+	<!-- 	select *
+		from tb_qna_board
+		where id=#{id}
+		and depth = 0
+		and group_no = #{groupNo}
+		and read_ans = 'N' -->
+	</select>
+
+	<select id="readQna" parameterType="qna" resultMap="qnaMap">
+		select *
+		from tb_qna_board
+		where id = #{oriId}
+		and depth = 1
+		and group_no = #{groupNo}
+		and no = #{no}
+	</select>
+	
+	<update id="updateReadAns" parameterType="qna">
+	 update tb_qna_board
+         set read_ans = 'Y'
+		where no = #{no}	
+	</update> 
+
+	<resultMap id="qnaLikeMap" type="qnaLike" >
+		<result column="like_no" property="likeNo"/>
+		<result column="no" property="no"/>
+		<result column="id" property="id"/>
+	</resultMap>
+	
+	<!-- 좋아요 -->
+	<select id="selectLikeView" parameterType="qnaLike" resultMap="qnaLikeMap">
+	 select *
+	   from tb_qna_like
+	  where no= #{no}
+	    and id= #{id}
+	</select>
+	
+	<insert id="insertLikeView" parameterType="qnaLike">
+	 insert into tb_qna_like(
+	 no,id
+	 )values(
+	 #{no},#{id}
+	 )
+	</insert>
+</mapper>

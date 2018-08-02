@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	font-family:NanumBarunGothic,sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 13px;
+	/* font: inherit; */
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {text-decoration: none;}
+/* 상세페이지 */
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.container .shell-container {
+  margin: auto;
+  background-color: #ffffff;
+  width: 900px;
+  height: 500px;
+   display: flex;
+  flex-direction: column;
+}
+.contents_header {
+	position: relative;
+	padding: 20px;
+	background-color: #f3f3f3;
+	border: 1px solid #e6e6e6;
+	border-top: 1px solid #b3b3b3;
+	width: 900px;
+	margin: auto;
+	height: 85px;
+}
+
+.contents_header>.title {
+	color: #1a1a1a;
+	font-size: 17px;
+	font-weight: 600;
+	word-wrap: break-word;
+}
+
+.contents_body {
+	font-family: Arial, Verdana, "Trebuchet MS", sans-serif;
+	font-size: 12px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	border-top: none;
+	padding: 20px;
+	font-size: 13px;
+	line-height: 1.6;
+	width: 900px;
+	height: 500px;
+	overflow-y: scroll;
+	margin: auto;
+}
+.contents_btn {margin-top: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 22px;}
+.detail {
+	min-height: 240px;
+}
+
+.nowrap {
+	font-weight: normal;
+	padding-left: 6px;
+	font-weight: normal;
+	color: #666666;
+}
+
+.cf {
+	padding-left: 5px;
+	line-height: 1.5;
+	color: #666666;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.day {
+	padding-left: 5px;
+	line-height: 1.5;
+	position: absolute;
+	color: #666666;
+	font-size: 15px;
+	right: 20px;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+.shell_writer {
+	float: left;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+.shell_hits {
+	float: right;
+	color: #666666;
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+.shell_hits>span {
+	padding-left: 5px;
+}
+
+.reHeader {
+	
+}
+
+.reBody, .writeComment {
+	background: #f5f5f5;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.reWriter {
+	display: inline-block;
+	margin: 5px 0 0 6px;
+	vertical-align: top;
+	color: #666;
+	word-wrap: break-word;
+	font-weight: bold;
+}
+
+.reDay {
+	font-size: 11px;
+	font-family: '돋움', dotum, Helvetica, sans-serif;
+	margin: 6px 0 0 1px;
+	display: inline-block;
+}
+
+.recomment {
+	padding-left: 10px;
+	background: url(../../images/arrow.png) no-repeat 0 0;
+	background-size: 21px;
+}
+
+.recomment>a {
+	padding-left: 12px;
+	font-size: 12px;
+	display: inline-block;
+	color: #484646;
+	margin-top: 0px;
+}
+
+.reBody li {
+	position: relative;
+	border-top: 1px solid #b9b9b9;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+.reBody li.reWrite {
+	padding-left: 11px;
+}
+
+.reBody li.reWrite .reWriteDiv {
+	width: 87%;
+	clear: both;
+	padding: 10px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: repeat;
+	border-color: #e5e5e5;
+}
+
+.reBody li.reWrite textarea {
+	overflow: hidden;
+	line-height: 14px;
+	height: 39px;
+	border: 0 !important;
+	width: 100%;
+	margin: 0;
+	padding: 1px 0;
+	overflow: auto;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	resize: none;
+}
+
+.reple {
+	background: url(../../images/arrow3.png) no-repeat 5px 11px;
+	background-size: 15px;
+	padding-left: 20px;
+}
+
+.reple>.comment>.reBtn {
+	position: absolute;
+	right: 16px;
+	width: 10%;
+	top: 5px;
+	cursor: pointer;
+}
+
+.reple>.comment>.reBtn .resubmit {
+	width: 100%;
+	height: 55px;
+	color: #666;
+}
+
+.repleW {
+	background: url(../../images/arrow3.png) no-repeat 5px 11px;
+	background-size: 15px;
+	padding-left: 20px;
+}
+
+}
+.repleW .comment .reWriteDiv {
+	width: 87%;
+	clear: both;
+	padding: 10px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: repeat;
+	border-color: #e5e5e5;
+}
+
+.repleW .comment .reWriteDiv table {
+	width: 100%;
+}
+
+.repleW>.comment>.reWriteDiv textarea {
+	overflow: hidden;
+	line-height: 14px;
+	height: 39px;
+	border: 0 !important;
+	width: 100%;
+	margin: 0;
+	padding: 1px 0;
+	overflow: auto;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	resize: none;
+}
+
+.repleW>.comment>.reBtn {
+	top: 15px;
+}
+
+.comment {
+	margin: 5px;
+}
+
+.reBody > .reBtn, .writeForm > .reBtn {
+	position: absolute;
+	right: 16px;
+	width: 10%;
+	top: 10px;
+	cursor: pointer;
+}
+
+#Rbtn {
+	width: 20%;
+	height: 66px;
+	color: #666;
+}
+.resubmit {
+	width: 100%;
+	height: 66px;
+	color: #666;
+}
+
+.reWrite table {
+	width: 100%;
+}
+
+Button {
+	cursor: pointer;
+}
+
+/* 등록폼 */
+table.editTable {width:900px; height:80%;
+    border: none;
+    border-collapse: collapse;
+    border-top: 1px solid #b3b3b3;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+}
+table.editTable tr { height:30px;}
+table.editTable tr th {  width: 20%;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f3f3f3;
+    border-top: 1px solid #e6e6e6;
+    color: #727272;
+    text-align: right;
+    font-size: 14px;}
+table.editTable tr td {    padding: 10px 20px;
+    border: none;
+    border-top: 1px solid #e6e6e6;
+    font-size: 14px;}
+    .shell_title {    color: #464646;
+    font-size: 32px;
+    margin-bottom: 0;
+    padding: 12px; margin:0;}
+.editTitle {width: 64%;}
+.editSelect {    width: 100px;
+    margin-left: 10px;
+    height: 25px;
+}

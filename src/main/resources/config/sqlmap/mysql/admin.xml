@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "kr.co.bitcode.repository.mapper.AdminMapper">
+
+	<resultMap id="codeMap" type="code">
+	<result column="code" property="code"/>
+	<result column="name" property="name"/>
+	</resultMap>
+
+
+	<!-- 총 Q&A 문의/답글 카운트 -->
+	<select id="selectAllCnt" resultType="hashMap">
+		select sum(case when type = 'qna' then cnt end) as qna,
+		       sum(case when type = 'qna_ans' then cnt end) as qna_ans,
+		       sum(case when type = 'c' then cnt end) as c,
+		       sum(case when type = 'c_ans' then cnt end) as c_ans,
+		       sum(case when type = 'java' then cnt end) as java,
+		       sum(case when type = 'java_ans' then cnt end) as java_ans,
+		       sum(case when type = 'jscript' then cnt end) as jscript,
+		       sum(case when type = 'jscript_ans' then cnt end) as jscript_ans,
+		       sum(case when type = 'python' then cnt end) as python,
+		       sum(case when type = 'python_ans' then cnt end) as python_ans,
+		       sum(case when type = 'php' then cnt end) as php,
+		       sum(case when type = 'php_ans' then cnt end) as php_ans,
+		       sum(case when type = 'asp' then cnt end) as asp,
+		       sum(case when type = 'asp_ans' then cnt end) as asp_ans
+		from (
+			  select 'qna' type, count(distinct group_no) cnt
+				from tb_qna_board
+		       union all     
+			  select 'qna_ans', count(distinct group_no)
+				from tb_qna_board
+				where answer_at = 'Y'
+		       union all     
+			  select 'c' type, count(distinct group_no)
+				from tb_qna_board
+				where language_code ='21'
+		       union all     
+			  select 'c_ans' type, count(distinct group_no)
+				from tb_qna_board
+				where language_code ='21'
+				and answer_at = 'Y'
+		       union all     
+			  select 'java' type, count(distinct group_no)
+				from tb_qna_board
+			   where language_code ='22'
+		       union all     
+			select 'java_ans', count(distinct group_no)
+				from tb_qna_board
+				where language_code ='22'
+				and answer_at = 'Y'
+		       union all     
+			  select 'jscript' type, count(distinct group_no)
+				from tb_qna_board
+			   where language_code ='23'
+		       union all     
+			select 'jscript_ans', count(distinct group_no)
+				from tb_qna_board
+				where language_code ='23'
+				and answer_at = 'Y'
+		       union all     
+			  select 'python' type, count(distinct group_no)
+				from tb_qna_board
+			   where language_code ='24'
+		       union all     
+			select 'python_ans', count(distinct group_no)
+				from tb_qna_board
+				where language_code ='24'
+				and answer_at = 'Y'
+		       union all     
+			  select 'asp' type, count(distinct group_no)
+				from tb_qna_board
+			   where language_code ='25'
+		       union all     
+			select 'asp_ans', count(distinct group_no)
+				from tb_qna_board
+				where language_code ='25'
+				  and answer_at = 'Y'
+		       union all     
+			  select 'php' type, count(distinct group_no)
+				from tb_qna_board
+			   where language_code ='26'
+		       union all     
+			select 'php_ans', count(distinct group_no)
+				from tb_qna_board
+				where language_code ='26'
+				  and answer_at = 'Y'
+		) a
+	</select>
+
+	
+	<!-- 총 Q&A 등록 갯수 (답글 제외) 
+	<select id="selectQnAAllCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+	</select>
+	-->
+	
+	<!-- 총 Q&A에 대한 답글 갯수 
+	<select id="selectQnAAllAnswerCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where answer_at = 'Y'
+	</select>
+	-->
+	
+	<!-- C 문의글 갯수 (답글 제외) 
+	<select id="selectQnACCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where language_code ='21'
+	</select>
+	-->
+	
+	<!-- Java 문의글 갯수 (답글 제외) 
+	<select id="selectQnAJavaCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where language_code ='22'
+	</select>
+	-->
+	
+	<!-- JavaScript 문의글 갯수 (답글 제외) 
+	<select id="selectQnAJavaScriptCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where language_code ='23'
+	</select>
+	-->
+	
+	<!-- Python 문의글 갯수 (답글 제외) 
+	<select id="selectQnAPythonCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where language_code ='24'
+	</select>
+	-->
+	
+	<!-- ASP 문의글 갯수 (답글 제외) 
+	<select id="selectQnAASPCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where language_code ='25'
+	</select>
+	-->
+	
+	<!-- PHP 문의글 갯수 (답글 제외) 
+	<select id="selectQnAPHPCnt" resultType="int">
+	select count(distinct group_no)
+		from tb_qna_board
+		where language_code ='26'
+	</select>
+	-->
+	
+	<resultMap id="qnaMap" type="qna">
+		<result column="no" property="no" />
+		<result column="group_no" property="groupNo" />
+		<result column="group_order" property="groupOrder" />
+		<result column="depth" property="depth" />
+		<result column="id" property="id" />
+		<result column="language_code" property="code" />
+		<result column="language_name" property="codeName" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="reg_date" property="regDate" />
+		<result column="view_cnt" property="viewCnt" />
+		<result column="like_cnt" property="likeCnt" />
+		<result column="answer_at" property="answerAt" />
+		<result column="stsfc_code" property="stsfcCode" />
+	</resultMap>
+	
+	
+	<resultMap id="stsfcCodeMap" type="stsfcCode">
+		<result column="stsfc_code" property="stsfcCode" />
+		<result column="stsfc_step" property="stsfcStep" />
+	</resultMap>
+	
+	<select id="unstsfCount" resultType="int" >
+	select count(*)
+	from tb_stsfc_code s
+	inner 
+	join tb_qna_board q
+	on q.stsfc_code = s.stsfc_code
+	where s.stsfc_code = 11	
+	</select>
+	<select id="MidstsfCount" resultType="int" >
+	select count(*)
+	from tb_stsfc_code s
+	inner 
+	join tb_qna_board q
+	on q.stsfc_code = s.stsfc_code
+	where s.stsfc_code = 12;
+	</select>	
+	<select id="stsfCount" resultType="int" >
+	select count(*)
+	from tb_stsfc_code s
+	inner 
+	join tb_qna_board q
+	on q.stsfc_code = s.stsfc_code
+	where s.stsfc_code = 13;
+	</select>
+	
+	
+</mapper> 

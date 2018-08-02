@@ -1,0 +1,271 @@
+/* 글씨 h1, h3 */
+div .userInformation {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    color: #474747;
+    text-align: center;
+    font-size: 26px;
+}
+
+.cf {    width: 1151px; margin-left:0; margin-right:0;}
+.managementBody {
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-left: 10%;
+}
+/* col 비율 */
+.twelve { width: 100%; }
+.eleven { width: 91.53%; }
+.ten { width: 83.06%; }
+.nine { width: 74.6%; }
+.eight { width: 66.13%; }
+.seven { width: 57.66%; }
+.six { width: 49.2%; }
+.five { width: 40.73%; }
+.four { width: 32.26%; }
+.three { width: 23.8%; }
+.two { width: 15.33%; }
+.one { width: 6.866%; }
+.four1 { width: 6% }
+.ten1 { width: 30% }
+.five1 { width: 10% }
+
+/* COLUMNS */
+.col {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+}
+
+.col:first-of-type {
+	margin-left: 0;
+}
+
+/* PROFILES */
+.card {
+	max-width: 90%;
+	height: 400px;
+	background-color: #f7f7f7;
+	font-family: 'Arimo', sans-serif;
+	font-size: 14px;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	box-sizing: border-box;
+}
+
+.userCard {
+	max-width: 100%;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	height: 15px;
+	font-family: 'Arimo', sans-serif;
+	font-size: 18px;
+}
+
+/* CARD ! */
+
+#card1 {
+	/* max-width: 30%; */
+	max-width: 100%;
+    width: 369px;
+	text-align: center;
+	color: #2c3e50;
+	/* 	padding: 15px; */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	border-radius: 6px;
+}
+
+#pName {
+	color: #305f5f;
+	text-align: left;
+	margin-left: 11px;
+	font-weight: bold;
+}
+
+/* CARD 2 */
+#card2 {
+	max-width: 100%;
+    width: 369px;
+	overflow: hidden;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+/* CARD 3 */
+#card3 {
+	max-width: 100%;
+    width: 369px;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+/* 회원정보수정 */
+.updateBtns {
+	margin-top: 8%;
+	margin-left: -10%;
+}
+
+span>#submitBtn {
+	text-decoration: none;
+}
+
+span>#submitPassBtn {
+	text-decoration: none;
+}
+
+a>#userInfoUpdate {
+	font-size: 13px;
+	text-decoration: none;
+	color: white;
+	/* 	padding-top: 1px; */
+}
+
+#submitBox {
+	text-align: center;
+	/*   margin-top: 30%; */
+	/*   position:; */
+	width: 45%;
+	height: 40px;
+	padding: 10px;
+	border-radius: 6px;
+	border: 0;
+	margin-left: 30px;
+	background: #df736a;
+	font-size: 1.2em;
+	color: #fff;
+	/*   text-shadow:#d9554a; */
+	box-shadow: 0px 3px 0px #e89791;
+	ext-decoration: none;
+}
+
+input {
+	width: 95%;
+	background: #f5f5f5;
+	border: 0;
+	padding: 16px;
+	border-radius: 6px;
+	margin-bottom: 5px;
+	border: 1px solid #eee;
+}
+
+input:focus, textarea:focus {
+	outline: none;
+}
+
+button, input[type="submit"], input[type="radio"], input[type="checkbox"] 
+input[type="button"] {
+	cursor: pointer;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+td, th {
+	padding: 0;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th {
+	padding: 8px;
+	line-height: 1.42;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+/* 홀수번째 tr들만을 대상으로 */
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+}
+
+.table-bordered {
+	border: 1px solid #ddd;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th {
+	border: 1px solid #ddd;
+}
+
+.table-hover>tbody>tr:hover {
+	background-color: #f5f5f5;
+}
+/* 빨 주 노 초 파 람 보 윗줄단  */
+.swatches {
+	float: left;
+	background: #333;
+}
+
+.swatches span {
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.red {
+	background: #ad3025;
+	opacity: 0.9;
+}
+.orange {
+	background: #f27937;
+	opacity: 0.8;
+}
+.yellow {
+	background: #f0b500;
+	opacity: 0.8;
+}
+.green {
+	background: #22a86d;
+	opacity: 0.8;
+}
+.blue {
+	background: #2279a4;
+	opacity: 0.8;
+}
+
+.maxbtn span {
+	display: block;
+	border: 1px solid #333;
+	border-top: 3px solid #333;
+	width: 11px;
+	height: 11px;
+	margin-top: 7px;
+}
+
+.maxbtn:hover span, .maximized .maxbtn span {
+	border-color: #e7e7e7;
+}
+
+.xbtn:hover {
+	color: #e7e7e7;
+}
+
+.topbar {
+	border-radius: 3px 3px 0 0;
+	padding: 5px;
+	text-align: right;
+	cursor: default;
+}
+
+.xbtn, .maxbtn {
+	padding: 2px 4px;
+	text-align: center;
+	border-radius: 2px;
+	color: #333;
+	display: inline-block;
+	zoom: 1.0;
+	vertical-align: top;
+	font-family: 'Days One', sans-serif;
+	font-size: 16px;
+	margin-top: -3px;
+}

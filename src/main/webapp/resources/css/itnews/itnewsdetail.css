@@ -1,0 +1,511 @@
+
+:root {
+  --color: #3c3163;
+  --transition-time: 0.5s;
+}
+
+/* 만족버튼 */	
+.satisAn {
+/* 	margin-bottom: -10px; */
+}
+input[type="radio"] {
+	cursor:pointer
+}
+
+input[type="radio"] + label {
+    color:#400000;
+    font-family:Arial, sans-serif;
+    cursor:pointer
+}
+
+.comment_box {
+    margin-bottom: -10px;
+    margin-top: -9px;
+    font-size: 15px;
+}
+
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+#StatisBtn {
+  text-align: center;
+  width:40px;
+  height: 25px;
+  border-radius:6px;
+  border:0;
+  margin-left:30px;
+  background:#df736a;
+  color:#fff;
+  ext-decoration:none;
+}
+#StatisBtn > #userClick{
+	font-size: 15px;
+	padding: 5px;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* * { */
+/*   box-sizing: border-box; */
+/* } */
+.col { 
+	display: block; 
+	float:left;
+/* 	margin: 1% 0 1% 1.6%;  */
+	box-shadow:15px 15px 0px rgba(0,0,0,.1);
+	margin-left: 20%;
+} 
+
+.col:first-of-type { margin-left: 0; }
+
+#h1ITNews {
+  color: #ffffff;
+  backgound: inherit;
+  padding: 0;
+  font-size: 50px;
+  margin-top: 6%;
+  margin-left: 37%;
+  text-decoration: underline;
+}
+/* 댓글 text */
+#commentTextDiv {
+	font-size: 13px;
+}
+
+#commentId {
+	color: #400000;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+#articleContent {
+/* 	width:100%; */
+	color: #600000;
+	font-size: 18px;
+	background-color: #f7f7f7;
+	
+}
+#articleTitle {
+	font-weight: bold;
+	font-family: 'Heebo';
+	color: #4a0000;
+/* 	text-align: left; */
+	margin-top: 10px;
+}
+#articleReport {
+	font-size:20px;
+/* 	font-weight: bold; */
+	color: #620000;
+	margin-right: 7px;
+}
+#articleUrl {
+	font-size:15px;
+	
+}
+
+.commentTextarea {
+/* 	width: 800px;
+	height: 40px; */
+    width: 88%;
+    height: 56px;
+
+}
+.cardITNewsDetail1 > .articleall {
+		margin-left: 3%;
+		margin-right: 3%;
+}
+
+/* 사진 */
+.cardITNewsDetail {
+  font-family: 'Heebo';
+  --bg-filter-opacity: 0.5;
+  width: 300px;
+  height: 160px;
+/*   font-size: 1.5em; */
+/*   border-radius: 0.5em; */
+  padding: 0.2em;
+/*   margin: 1em; */
+  display: flex;
+  align-items: flex-end;
+/*   box-shadow: 0 0 5em -1em black; */
+  position: relative;
+/*   overflow: hidden; */	
+  border: 1px solid #bdbdbd;
+  text-decoration: none;
+  margin-left: 30%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+/* 사진 이미지 */
+.cardITNewsDetail > img {
+  width: 300px;
+  height: 150px;
+
+}
+#comment{
+/* 		margin-left: 20%; */
+/* 		width: 1000px; */
+/* 		margin-top: 110%; */
+/* 		border: 1px solid black; */
+/* 		margin-right: 40%; */
+}
+
+/* 기사내용 */
+.cardITNewsDetail1 {
+/* 	position:relative; */
+/* 	width: 100%; */
+/* 	height: 400px; */
+/* 	min-height:400px; */
+	font-family: 'Heebo';
+	--bg-filter-opacity: 0.5;
+	background-color: white;
+	
+	font-size: 1.5em;
+	border-radius: 0.1em;
+/* 	padding: 0.2em; */
+/* 	margin: 0.5em; */
+/* 	display: flex; */
+	box-shadow: 0 0 5em -1em black;
+	position: relative;
+	border: 1px solid #cccccc; 
+	text-decoration: none;
+	word-wrap:break-word; 
+	overflow:auto; 
+	overflow-x:hidden;
+	overflow-y:yes; 
+	overflow: scroll;
+	width: 1055px;
+	min-width:900px; 
+	height: 700px;
+	min-height:200px;
+/* 	margin-left: 20%; */
+
+}
+
+/* 기사내용 */
+ .card-grid-space1 {
+ 	width: 1100px;
+	min-width:800px; 
+	/* margin-left: 18%; */
+	margin: auto;
+	margin-top: 2%;
+	height: 800px;
+	margin-bottom: 5%;
+	
+/* 	font-family: 'Heebo'; */
+/* 	--bg-filter-opacity: 0.5; */
+/* 	background-color: white; */
+	
+/* 	font-size: 1.5em; */
+/* 	border-radius: 0.3em; */
+/* 	padding: 0.2em; */
+/* 	margin: 0.5em; */
+/* 	display: flex; */
+/* 	box-shadow: 0 0 5em -1em black; */
+/* 	position: relative; */
+/* 	border: 1px solid #cccccc;  */
+/* 	text-decoration: none; */
+/* 	word-wrap:break-word;  */
+/* 	overflow:auto;  */
+/* 	overflow-x:hidden; */
+/* 	overflow-y:yes;  */
+/* 	overflow: scroll; */
+/* 	width: 1250px; */
+/* 	min-width:1100px;  */
+/* 	height: 900px; */
+/* 	min-height:200px; */
+/* 	margin-left: 20%; */
+  
+}
+
+
+
+.cardITNewsDetail h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.cardITNewsDetail p {
+  font-size: 0.75em;
+  font-family: 'Open Sans';
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+
+/* 댓글 *********************댓글************댓글***********댓글*****댓글********** */
+
+
+.container-fluidIT {
+	/* width가 지정되지 않아 내용의 크기만큼 영역 */
+	/* 간격 15px씩 */
+	padding-right: 15px;
+	padding-left: 15px;
+	/* 가운데 위치하게 설정 */
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.container-boardIT {
+	width: 1000px;
+	/* 간격 15px씩 */
+	padding-right: 15px;
+	padding-left: 15px;
+	/* 가운데 위치하게 설정 */
+	margin-right: auto;
+	margin-left: 25%;
+}
+.form-control {width:100%; height: 40px}
+
+.form-control-input-wp1 {width:100%; height: 40px;}
+
+.rowIT {
+	/* magin에 -를 하여 전체칸을 다 쓰게 됨*/
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+/* .col-md-1 { width: 8.3333333% } 12개의 엘리먼트들이 부모의 영역중 8.3 정도를 영역으로 차지 */
+/* .col-md-2 { width: 16.6666667% } 6개 */
+/* .col-md-3 { width: 25% } 4개 */
+/* .col-md-4 { width: 33.3333333% } 3개 */
+/* .col-md-5 { width: 41.6666667% } */
+/* .col-md-6 { width: 50% } 2개 */
+/* .col-md-7 { width: 58.3333333% } */
+/* .col-md-8 { width: 66.6666667% } */
+/* .col-md-9 { width: 75% } */
+/* .col-md-10 { width: 83.333333% } */
+/* .col-md-11 { width: 91.666667% } */
+/* .col-md-12 { width: 100% } */
+
+
+/* .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11 .col-md-12 { */
+/* 	float: left; */
+/* 	position: relative; 본래 자기 위치 기준에서 */
+/* 	min-height: 1px; */
+/* 	padding-left: 15px; 자기 영역 내에서의 간격 */
+/* 	padding-right: 15px; */
+/* } */
+
+/* table { border-collapse: collapse; } */
+/* .table { width: 100%; margin-bottom: 20px; } */
+/* th { text-align: left; } */
+/* td, th { padding: 0; } */
+/* .table > tbody > tr > td, .table > tbody > tr > th { */
+/* 	padding: 8px; */
+/* 	line-height: 1.42; */
+/* 	vertical-align: top; */
+/* 	border-top: 1px solid #ddd; */
+/* } */
+/* /* 홀수번째 tr들만을 대상으로 */ */
+/* .table-striped > tbody > tr:nth-of-type(odd) { */
+/* 	background-color: #f9f9f9; */
+/* } */
+/* .table-bordered { */
+/* 	border: 1px solid #ddd; */
+/* } */
+/* .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th { */
+/* 	border: 1px solid #ddd; */
+/* } */
+
+/* .table-hover > tbody > tr:hover { */
+/* 	background-color: #f5f5f5; */
+/* } */
+
+
+/* 버튼 */
+/* 버튼 디자인 */
+
+
+/* div.comment_box button.btn2 { */
+/* #comment button.btn2 { */
+
+.btn-primary1 {
+	color: #fff;
+	background-color: #383838;
+}
+
+/* 버튼을 마우스 클릭시 */
+.btn2:active {
+	/* 그림자를 안쪽으로 */
+	box-shadow: 0 3px 5px rgba(0, 0, 0, .125) inset;
+}
+/* 포커스 및 마우스오버시 */
+.btn1:focus, .btn1:hover {
+	color: #0080ff;
+	text-decoration: none; 
+}
+
+
+/* .btnITList { */
+/* 	width: 100%; */
+/* 	height: 40px; */
+/* } */
+.btnITList > .ITList {
+	cursor: pointer;
+	/* 부모 색상과 일치하게 해서 투명해 보이게 */
+	border: 1px solid transparent;
+	/* 둥근 테두리 */
+	border-radius: 4px;
+	background-color: #383838;
+	width: 50px;
+	height: 40px; 
+	margin-left:70%;
+	color: white;
+	text-decoration: none;
+/* 	font-size: 30px; */
+} 
+
+
+
+/* 빨 주 노 초 파 람 보 윗줄단  */
+.swatches{
+		float: left;
+		background: #333;
+	}
+	.swatches span{
+		display: block;
+		float: left;
+		width: 10px;
+		height: 10px;
+		cursor: pointer;
+		margin: 5px;
+	}
+	.red{
+		background: #ad3025;
+		opacity: 0.9;
+	}
+	.orange{
+		background: #f27937;
+		opacity: 0.8;
+	}
+	.yellow{
+		background: #f0b500;
+		opacity: 0.8;
+	}
+	.green{
+		background: #22a86d;
+		opacity: 0.8;
+	}
+	.blue{
+		background: #2279a4;
+		opacity: 0.8;
+	}
+	.maxbtn span{
+		display: block;
+		border: 1px solid #333;
+		border-top: 3px solid #333;
+		width: 11px;
+		height: 11px;
+		margin-top: 7px;
+	}
+	.maxbtn:hover span, .maximized .maxbtn span{
+		border-color: #e7e7e7;
+	}
+
+	.xbtn:hover{
+		color: #e7e7e7;
+	}
+	.topbar {
+    border-radius: 3px 3px 0 0;
+    padding: 7px;
+    text-align: right;
+    cursor: default;
+    width: 96%;
+	}
+	span { color: #e7e7e7;}
+	
+	.xbtn, .maxbtn {
+    padding: 2px 4px;
+    text-align: center;
+    border-radius: 2px;
+    color: #333;
+    display: inline-block;
+    zoom: 1.0;
+    vertical-align: top;
+    font-family: 'Days One', sans-serif;
+    font-size: 16px;
+    margin-top: -3px;
+}
+/* 등급 */
+.userInfoPoint {
+	margin-left:45px;
+/* 	margin-top	:5px; */
+/* 	text-align:right; 	 	 */
+	font-size: 	20px;
+	color: #353535;
+	text-shadow: 1px 1px 1px rgba(1,1,0,.1);
+}
+.userInfobattery1{
+/* 	margin-top:-30px;  */
+	    vertical-align: sub;
+}
+
+.lelvel{
+	
+}
+
+button.btn2 {
+	/* 버튼끼리의 위 아래 좌 우 간격 설정 */
+/* 	padding: 6px 12px; */
+	/* 커서 모양 */
+	cursor: pointer;
+	/* 부모 색상과 일치하게 해서 투명해 보이게 */
+	border: 1px solid transparent;
+	/* 둥근 테두리 */
+	border-radius: 4px;
+	background-color: #c10000;
+	color:white;
+	width:40px;
+	height: 30px; 
+}
+.btn3 {
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #c10000;
+    color: white;
+    width: 81px;
+    height: 46px;
+    /* padding-bottom: 76px; */
+    /* padding: 18px; */
+    display: block;
+    top: 6px;
+    position: absolute;
+    font-size: 16px;
+    right: 21px;
+}
+
+.commetWrap {    
+	position: relative;
+    width: 100%;}
+.

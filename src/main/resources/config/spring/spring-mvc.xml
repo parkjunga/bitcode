@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- 빈 객체를 자동 등록 처리 -->
+	<context:component-scan base-package="kr.co.bitcode" />
+	<!-- naver Login -->
+	<bean id="naverLoginBO" class="kr.co.bitcode.login.controller.NaverLoginBO" />
+
+	<!-- mvc 관련 객체 등록 작업 진행 : @RequestMapping 어노테이션을 처리 등.. -->	 
+    <mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html; charset=UTF-8</value>
+						<value>application/json; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean> 
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 최대 업로드 파일 사이즈 : 10MB -->
+		<property name="maxUploadSize" value="10485760" />
+	</bean>
+	
+<!-- 	<bean id="fileViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"> -->
+<!-- 		<property name="order" value="0"/> -->
+<!-- 	</bean> -->
+<!-- 	<mvc:view-controller path="/file/uploadForm.do" view-name="file/fileUploadForm"/> -->
+	
+	<!-- WEB의 정적 페이지 처리 등을 위해 사용 -->
+	<mvc:default-servlet-handler />
+	
+	<!-- JSP 페이지로 이동 시 아래의 설정 내용을 참고 -->
+	<mvc:view-resolvers>
+		<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp" />
+	</mvc:view-resolvers>
+	
+	<!-- AuthInterceptor 로그인 세션 필터 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/**" />
+			<mvc:exclude-mapping path="/main/main.do" />
+			<mvc:exclude-mapping path="/sendMail/*.json" />
+			<mvc:exclude-mapping path="/login/*.json" />
+			<mvc:exclude-mapping path="/login/*.do" />
+			<mvc:exclude-mapping path="/user/*.do" />
+			<mvc:exclude-mapping path="/user/*.json" />
+			<mvc:exclude-mapping path="/*/list.do" />
+			<mvc:exclude-mapping path="/*/list.json" />
+			<mvc:exclude-mapping path="/itnews/*.do" />
+			<mvc:exclude-mapping path="/itnews/*.json" />
+			<mvc:exclude-mapping path="/searchcenter/*.do" />
+			<mvc:exclude-mapping path="/searchcenter/*.json" />
+			<bean class="kr.co.bitcode.interceptor.AuthInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<!-- 이메일 관련 -->
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	    <property name="host" value="smtp.gmail.com" />
+	    <property name="port" value="587" />
+	    <property name="username" value="bitcodeProject1@gmail.com" />
+	    <property name="password" value="bitcodeadmin1111" />
+	    <property name="javaMailProperties">
+	        <props>
+	            <prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+	            <prop key="mail.smtp.starttls.enable">true</prop>
+	            <prop key="mail.smtp.auth">true</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	
+	
+	
+</beans>

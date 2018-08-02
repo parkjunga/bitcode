@@ -1,0 +1,257 @@
+.listBody {
+	width: 950px;
+    margin: 0 auto;
+    margin-top: 12%;
+    /* margin-left: 10%; */
+    height: 500px;
+}
+.list {
+  position:relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.boardList {
+  width: 100%;
+  text-align: center;
+}
+.pull-right {
+/* 	margin-right: 50px;
+	margin-bottom: 20px; */
+	position: absolute;
+    bottom: 70px;
+    right: 30px;
+}
+table.boardList > thead > tr > th {text-align: center;}
+th, td, a {
+  transition: color 333ms ease-in-out;
+  vertical-align: middle;
+  text-align: center;
+}
+a {
+  color: #407DB8;
+  text-decoration: none;
+  font-weight: 400;
+}
+tr:nth-child(even) {
+  background: #e6f0f6;
+}
+tr:nth-child(odd) {
+  background: #fff;
+}
+tr:hover {
+  background: #ddd;
+}
+tr:hover:nth-child(even) {
+  background: #ddd;
+}
+tr:hover td {
+  color: #888;
+}
+tr:hover a {
+  color: #666;
+}
+tr td {
+  color: #888;
+  font-size: 0.78em;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+}
+
+/* 글씨 h1, h3 */
+div .information {
+	margin-top: 20px;
+    margin-bottom: 50px;
+    color: #5a5a5a;
+    text-align: center;
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.title1 {
+	color: #ffffff;
+	backgound: inherit;
+	/*   margin: 0 0 10px 6px; */
+	padding: 0;
+	font-size: 50px;
+	margin-top: 4%;
+	margin-left: 37%;
+	margin-bottom: 2%;
+}
+
+/* col 비율 */
+.one { width: 6.866%; }
+.two { width: 15.33%; }
+.three { width: 23.8%; }
+.four { width: 32.26%; }
+.five { width: 40.73%; }
+.six { width: 49.2%; }
+.seven { width: 57.66%; }
+.eight { width: 66.13%; }
+.nine { width: 74.6%; }
+.ten { width: 83.06%; }
+.eleven { width: 91.53%; }
+.twelve { width: 100%; }
+.four1 { width: 6% }
+.five1 { width: 10% }
+.ten1 { width: 30% }
+
+/* COLUMNS */
+.col {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+}
+.col:first-of-type {
+	margin-left: 0;
+}
+/* PROFILES */
+.card {
+	max-width: 100%;
+	height: 100%;
+	background-color: #f7f7f7;
+	font-family: 'Arimo', sans-serif;
+	font-size: 14px;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	box-sizing: border-box;
+}
+
+/* CARD ! */
+#card1 {
+	margin: 0 auto;
+	max-width: 100%;
+	text-align: center;
+	color: #2c3e50;
+	width:950px;
+	min-height:490px;
+	/* 	padding: 15px; */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 15px 15px 0px rgba(0, 0, 0, .1);
+	border-radius: 6px;
+}
+
+/* CARD 2 */
+#card2 {
+	max-width: 30%;
+	overflow: hidden;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+/* CARD 3 */
+#card3 {
+	max-width: 30%;
+	color: #2c3e50;
+	border-radius: 6px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th {
+	padding: 8px;
+	line-height: 1.42;
+	vertical-align: middle;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	color: #4a4a4a;
+    /* font-size: 13px; */
+}
+/* 홀수번째 tr들만을 대상으로 */
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: #f9f9f9;
+}
+.table-bordered {
+	border: 1px solid #ddd;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th {
+	border: 1px solid #ddd;
+	text-align: center;
+}
+
+.table-hover>tbody>tr:hover {
+	background-color: #f5f5f5;
+}
+
+/* 빨 주 노 초 파 람 보 윗줄단  */
+.swatches {
+	float: left;
+	background: #333;
+}
+.swatches span {
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	/* cursor: pointer; */
+	margin: 5px;
+}
+.red {
+	background: #ad3025;
+	opacity: 0.9;
+}
+.orange {
+	background: #f27937;
+	opacity: 0.8;
+}
+.yellow {
+	background: #f0b500;
+	opacity: 0.8;
+}
+.green {
+	background: #22a86d;
+	opacity: 0.8;
+}
+.blue {
+	background: #2279a4;
+	opacity: 0.8;
+}
+
+.maxbtn span {
+	display: block;
+	border: 1px solid #333;
+	border-top: 3px solid #333;
+	width: 11px;
+	height: 11px;
+	margin-top: 7px;
+}
+
+.maxbtn:hover span, .maximized .maxbtn span {
+	border-color: #e7e7e7;
+}
+
+.xbtn:hover {
+	color: #e7e7e7;
+}
+
+.topbar {
+	border-radius: 3px 3px 0 0;
+	padding: 5px;
+	text-align: right;
+	cursor: default;
+}
+
+span {
+	color:#244c61;
+}
+
+.xbtn, .maxbtn {
+	cursor:pointer;
+	padding: 2px 4px;
+	text-align: center;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	zoom: 1.0;
+	vertical-align: top;
+	font-family: 'Days One', sans-serif;
+	font-size: 16px;
+	margin-top: -3px;
+}
+#list select {width: 121px; margin-top: 12px; height: 35px; border: 1px solid #d1d0cf; background-color: #fff; line-height: 29px;}
+.searchC {margin-left: 3px; height:31px;}
+.searchSubmit{
+	height: 30px;
+    background: #244c61;
+    width: 50px;
+    color: white;
+    border: none;}

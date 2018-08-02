@@ -1,0 +1,242 @@
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+nav, 
+section {
+    display: block;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+}
+
+label, 
+select, 
+button, 
+input[type="submit"], 
+input[type="radio"], 
+input[type="checkbox"] 
+input[type="button"] {
+    cursor: pointer;
+}
+
+h1 > #siciallogin:hover { cursor: pointer; }
+
+
+/* 생년월일 inputBpx */
+.birthday > #birth1 {
+	width:75px;
+/* 	padding:16px; */
+	margin-right:10px;
+/* 	margin-left:-100px; */
+	height: 40px;
+/* 	text-align: center; */
+}
+.birthday > #birth2 {
+	width:75px;
+/* 	padding:16px; */
+	margin-right:10px;
+	height: 40px;
+/* 	text-align: center; */
+}
+.birthday > #birth3 {
+	width:75px;
+/* 	padding:16px; */
+	margin-right:10px;
+	height: 40px;
+/* 	text-align: center; */
+}
+
+
+/* ::selection { */
+/*     background: #ed327b; */
+/*     color: #fff; */
+/* } */
+
+/* ::-moz-selection { */
+/*     background: #ed327b; */
+/*     color: #fff; */
+/* } */
+
+* {
+    font-size:100%;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+  font-family:"Helvetica Neue", Helvetica, Arial;
+}
+
+h5 {
+  text-align:center;
+  margin-top:5px;
+  color:rgba(0,0,0,.3);
+}
+
+h5 > a,a:visited {
+  color:#fff;
+  text-decoration:underline;
+}
+
+h5 > a:hover {
+  text-decoration:none;
+}
+
+/* form { */
+.updateUserform {
+  background:#fff;
+  border-radius:6px;
+  padding:20px;
+  padding-top:20px;
+  width:400px;
+  min-width:300px;
+  margin:60px auto;
+  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+  height: 700px;
+}
+
+h1 {
+  text-align:center;
+  font-size:25px;
+  font-weight:700;
+  color:#f26964;
+  margin-bottom:15px;
+  
+/*   	background-image: url("/bitcode/resources/images/signupIcon2.png"); */
+/* 	background-position: center; */
+/* 	background-repeat: no-repeat; */
+/*   	background-size: 25px 30px; */
+}
+
+
+
+
+span {
+  font-size: 15px;
+  margin-right: 10%;
+}
+
+
+input {
+  width:100%;
+  background:#f5f5f5;
+  border:0;
+  padding:16px;
+  border-radius:6px;
+  margin-bottom:10px;
+  border:1px solid #eee;
+}
+
+/* .btn { */
+/*   margin-bottom: 5%; */
+/*   position:relative; */
+/*   width:100%; */
+/*   padding:20px; */
+/*   border-radius:6px; */
+/*   border:0; */
+/*   background:#f26964; */
+/*   font-size:1.2em; */
+/*   color:#fff; */
+/*   text-shadow:1px 1px 0px rgba(0,0,0,.1); */
+/*   box-shadow:0px 3px 0px #c1524e; */
+/* } */
+
+#submitBox1 {
+/*   margin-top: 40%; */
+/*   margin-left:30px; */
+/*   position:; */
+  width:100%;
+  height: 40px;
+/*   padding:10px; */
+  border-radius:6px;
+  border:0;
+  background:#f26964;
+/*   font-size:1.2em; */
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,.1);
+  box-shadow:0px 3px 0px #c1524e;
+}
+.innerText {
+/* 	color: b; */
+/* 	font-size: 15px; */
+	font-weight: bolder;
+}
+#submitBox {
+  margin-top: 5px;
+/*   margin-left:60px; */
+/*   position:; */
+  width:100%;
+  height: 40px;
+/*   padding:10px; */
+  border-radius:6px;
+  border:0;
+  background:#f26964;
+/*   font-size:1.2em; */
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,.1);
+  box-shadow:0px 3px 0px #c1524e;
+}
+
+div > #submitBtn {
+	
+	 text-decoration:none;	
+	 font-size: 22px;
+	 color: white;
+	 margin-left: 30%;
+	 font-weight: lighter;
+	 text-align: center;
+	 font-variant: normal;
+}
+div > #submitBtn1 {
+	
+	 text-decoration:none;	
+	 font-size: 22px;
+	 color: white;
+	 margin-left: 38%;
+	 font-weight: lighter;
+	 text-align: center;
+	 font-variant: normal;
+}
+
+/* a > .signupbtn { */
+/* 	 margin-top: 10%; */
+/* 	font-size: 18px; */
+/* 	 color: white; */
+/* 	 margin-left: 40%; */
+/* 	 font-weight: bolder; */
+/* 	 text-align: center; */
+/* } */
+
+.btn:active {
+  top:3px;
+  box-shadow:none;
+}
+
+#pName {
+	color: #305f5f;
+	text-align: left; 
+	margin-left: 11px;
+	font-weight: bold;
+}
+
+
+/* .google { */
+/*   background:#db4a39; */
+/*   box-shadow:0px 3px 0px #b93f31; */
+/* } */
