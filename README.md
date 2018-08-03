@@ -36,7 +36,6 @@
 >![enter image description here](https://blogfiles.pstatic.net/MjAxODA4MDJfMjI5/MDAxNTMzMjE0NTk0NTAw.Z7vWqBPzpPH6OoEEXOh6lNQzPgWAgUW2qBDh8IchTQ0g.bUKlHYxmfTEpug-0sbvpba9jb_1oAnf48YkYmc7sLagg.PNG.djdjejh/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EA%B5%AC%EC%A1%B0.png)
 
 ### 버전관리
-* #### SourceTree 이용 
-* #### 팀원들간에 수정/삭제에 따른 상시 업데이트(https://github.com/LeeJeongHun1/Bitcode)
+* #### SourceTree 이용, 팀원들간에 수정/삭제에 따른 상시 업데이트(https://github.com/LeeJeongHun1/Bitcode)
 >![enter image description here](https://blogfiles.pstatic.net/MjAxODA4MDJfNTQg/MDAxNTMzMjEyOTYzMjc3.RIHa250o0XfLdGhCAfyiW2RUx5W7q8oElplSHHVCyUwg.ewfeit0xmw34CSFEGBLrWGH0-8-7ACPxCBo67oU__O4g.GIF.djdjejh/%EC%86%8C%EC%8A%A4%ED%8A%B8%EB%A6%AC.gif)<br>
 
