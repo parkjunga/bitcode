@@ -20,7 +20,7 @@
 * 답글을 읽을 시 알림 카운트에서 제외되고 알림이 사라진다.
 * 포인트 추가/차감등이 알람에서 실시간 확인이 가능하다.
 
->![enter image description here](https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1533212012240-%EC%95%8C%EB%A6%BC.gif)<br>
+>![enter image description here](https://postfiles.pstatic.net/MjAxODA5MTRfMjQw/MDAxNTM2ODk5MTkyMDU5.XeppAob4sJeQ_YvWPHElIWUkebNOmISIO7TWdzO6rTgg.yX1DZEMXMcAOuJiYmqc_BRP5WjSrDa5-txm0khjY8aIg.GIF.djdjejh/%EC%95%8C%EB%A6%BC.gif?type=w773)<br>
 
 > QnA 게시판
 * CRUD 기능 <br>
